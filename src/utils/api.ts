@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'https://admin-jaspharm.soffhub.uz/api/v1'
+const baseURL = 'https://jaspharm.pythonanywhere.com/api/v1'
 
 const api = axios.create({
     baseURL

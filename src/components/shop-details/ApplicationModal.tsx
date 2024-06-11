@@ -37,11 +37,17 @@ const ApplicationModal = ({ id, closeModal, data }: propsType) => {
         };
     }, [handleEscKey]);
 
+    const click = (e: any) => {
+        if (e.target?.className === e.currentTarget?.className) {
+            closeModal()
+        }
+    }
+
 
 
     return (
         <>
-            <div className={`product-details-area pro-top-thamb pro-bottom-thamb application-div  ${isMobile ? 'pt-100' : 'pt-100'}`}>
+            <div onClick={click} className={`product-details-area pro-top-thamb pro-bottom-thamb application-div  ${isMobile ? 'pt-100' : 'pt-100'}`}>
                 <div className={`product-details-content-2 pt-3`}>
                     <span className="d-block text-center">
                         <i className="fa-solid fa-rectangle-xmark" style={{ cursor: 'pointer' }} onClick={closeModal} ></i>

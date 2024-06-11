@@ -130,7 +130,7 @@ const ShopDetailsContent = ({ data }: any) => {
                           )}
                         </ul>
                       </div>
-                      <div className="all-info d-sm-flex align-items-center mt-35">
+                      <div className="all-info d-sm-flex align-items-center mt-35" style={{ cursor: 'pointer' }}>
                         <div className="pro-list-btn d-inline-block mr-10 mb-15" onClick={() => setApplication(true)}>
                           <span
                             className="web-btn h2-theme-border1 d-inline-block rounded-0 text-capitalize white h2-theme-bg position-relative over-hidden pl-35 pr-35 ptb-17"

@@ -8,6 +8,7 @@ import api from "@/utils/api";
 import useQueryParam from "@/utils/useQueryParams";
 import { useParams } from "next/navigation";
 import Preloader from "@/utils/Preloader";
+import { useTranslation } from "react-i18next";
 
 const ShopArea = () => {
   const [activeTab, setactiveTab] = useState<boolean>(false);
@@ -26,6 +27,7 @@ const ShopArea = () => {
 
   const query = useQueryParam()
   const [data, setData] = useState<any[]>([])
+  const { t } = useTranslation()
 
   const getData = async () => {
     const resp = await api.get(`common/products/?category__slug=${param?.slug || ''}`)
@@ -41,7 +43,7 @@ const ShopArea = () => {
 
   return (
     <>
-      {activeTab ? <div className="product-area shop-product mt-20 mb-100">
+      {activeTab && data?.length > 0 ? <div className="product-area shop-product mt-20 mb-100">
         <div className="container">
           <div className="product-content single-product-tab-content"></div>
           <div className="product-wrapper mt-1">
@@ -69,6 +71,8 @@ const ShopArea = () => {
             </div>
           </div>
         </div>
+      </div> : data?.length === 0 ? <div className='mx-auto py-4 d-flex flex-column gap-4 px-3' style={{ maxWidth: '1000px', minHeight: '400px', textAlign: 'center' }}>
+        <h1>{t("Ma'lumot topilmadi")}</h1>
       </div> : <Preloader />}
     </>
   );

@@ -25,12 +25,12 @@ const HeaderOne = () => {
     }
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", sticky);
-    return () => {
-      window.removeEventListener("scroll", sticky);
-    };
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", sticky);
+  //   return () => {
+  //     window.removeEventListener("scroll", sticky);
+  //   };
+  // });
 
   const sticky = () => {
     const header = document.querySelector("#header-sticky");

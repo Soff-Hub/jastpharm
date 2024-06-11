@@ -35,7 +35,9 @@ const BlogMain = () => {
             </div>
             <BlogPagination />
         </>
-    ) : <Preloader />
+    ) : data?.length === 0 ? <div className='mx-auto py-4 d-flex flex-column gap-4 px-3' style={{ maxWidth: '1000px', minHeight: '400px', textAlign: 'center' }}>
+        <h1>{t("Ma'lumot topilmadi")}</h1>
+    </div> : <Preloader />
 };
 
 export default BlogMain;

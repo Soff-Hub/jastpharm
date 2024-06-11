@@ -114,7 +114,7 @@ const HomeOneSlider = () => {
               transform: "translate(-50%, -50%)",
             }}
           >
-            Malumot topilmadi
+            {t("Ma'lumot topilmadi")}
           </h1>
         </div>
       )}

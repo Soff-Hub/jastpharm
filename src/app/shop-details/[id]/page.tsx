@@ -14,7 +14,7 @@ const ShopDetailsPage = ({ params }: { params: { id: string } }) => {
     const getData = async () => {
         const resp = await api.get(`common/products/${id}/`)
 
-        setData(resp.data);
+        setData({ ...resp.data, product_gallery: [{ image: resp.data?.poster }, ...resp.data?.product_gallery] });
     }
 
     useEffect(() => {

@@ -65,7 +65,7 @@ const FooterTwo = () => {
                         <p className="font500">
                           <a href="map:https://maps.app.goo.gl/j11ED3KvTLkqSD638">{t("header_address")}</a> <br />
                         </p>
-                        <Socials />
+                        {/* <Socials /> */}
                         <div className="copyright-text d-sm-flex justify-content-center align-items-center mt-50">
                           <p className="mb-0">
                             © {new Date().getFullYear()}

@@ -20,44 +20,17 @@ const HomeContact = () => {
                                     </h4>
 
                                 </div>
-                                <div className="c-contact d-sm-flex">
-                                    <span className="primary-color pr-1">{t("Manzil")} : </span>
+                                <div className="c-contact d-sm-flex gap-2">
+                                    <span className="primary-color pr-1">{t("Manzil")}:</span>
                                     <a href="map:https://maps.app.goo.gl/j11ED3KvTLkqSD638">{t("header_address")}</a>
                                 </div>
-                                <div className="c-email d-sm-flex">
-                                    <span className="primary-color pr-1">{t("Email")} : </span>
+                                <div className="c-email d-sm-flex gap-2">
+                                    <span className="primary-color pr-1">{t("Email")}:</span>
                                     <a href="mailto:info@jaspharm.uz">info@jaspharm.uz</a>
                                 </div>
-                                <div className="c-number d-sm-flex">
-                                    <span className="primary-color pr-1">{t("Tel")} : </span>
-                                    <a href="tel:+998974143377">{" "}97 414 33 77</a>
-                                </div>
-                                <div className="c-social-link d-sm-flex align-items-center mt-15">
-                                    <span className="primary-color d-inline-block pr-10">
-                                        {t("Ijtimoiy tarmoqlarda")}
-                                    </span>
-                                    <ul className="social-link d-flex  align-items-center">
-                                        <li>
-                                            <Link href="https://twitter.com/">
-                                                <i className="fab fa-twitter"></i>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="https://www.facebook.com/">
-                                                <i className="fab fa-facebook-f"></i>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="https://www.behance.net/">
-                                                <i className="fab fa-behance"></i>
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="https://bd.linkedin.com/">
-                                                <i className="fab fa-linkedin-in"></i>
-                                            </Link>
-                                        </li>
-                                    </ul>
+                                <div className="c-number d-sm-flex gap-2">
+                                    <span className="primary-color pr-1">{t("Tel")}:</span>
+                                    <a href="tel:+998974143377">{" "}+998 97 414 33 77</a>
                                 </div>
                             </div>
                         </div>

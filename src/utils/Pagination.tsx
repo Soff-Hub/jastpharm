@@ -23,7 +23,7 @@ const Pagination = ({ total, active, onChange }: Props) => {
         </li>
         {
           Array(Math.ceil(total / 12)).fill(1).map((el, index) => (
-            <li className={`page-item ${(index + 1) === Number(active) ? "active" : ""}`} onClick={() => onClick(index + 1)}>
+            <li key={index} className={`page-item ${(index + 1) === Number(active) ? "active" : ""}`} onClick={() => onClick(index + 1)}>
               <p className="page-link">
                 {index + 1}
               </p>

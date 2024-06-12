@@ -30,7 +30,7 @@ const HomeContact = () => {
                                 </div>
                                 <div className="c-number d-sm-flex">
                                     <span className="primary-color pr-1">{t("Tel")} : </span>
-                                    <a href="tel:+998931231177">{" "}71 411 54 54</a>
+                                    <a href="tel:+998974143377">{" "}97 414 33 77</a>
                                 </div>
                                 <div className="c-social-link d-sm-flex align-items-center mt-15">
                                     <span className="primary-color d-inline-block pr-10">

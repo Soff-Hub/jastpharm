@@ -61,7 +61,7 @@ const HeaderOne = () => {
             <ul className="d-flex align-items-center">
               <li className="d-flex align-items-center gap-2 border-r-gray1 px-4">
                 <i className="fa-solid fa-phone"></i>
-                <a href="tel:+998931231177">+998 (97) 170-09-41</a>
+                <a href="tel:+998974143377">+998 (97) 414-33-77</a>
               </li>
               <li className="d-flex align-items-center gap-2 border-r-gray1 px-4">
                 <i className="fa-regular fa-envelope"></i>

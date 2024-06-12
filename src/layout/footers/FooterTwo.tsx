@@ -43,12 +43,12 @@ const FooterTwo = () => {
                           <li>
                             <Link
                               className="footer-phone text-white"
-                              href="tel:+998931231177"
+                              href="tel:+998974143377"
                             >
                               <span className="mr-2">
                                 <small className="first-num">+998</small>
                               </span>
-                              71 448 19 19
+                              97 414 33 77
                             </Link>
                           </li>
                           <li className="footer-mail mt-28">

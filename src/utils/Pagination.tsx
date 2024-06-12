@@ -1,29 +1,39 @@
-import Link from "next/link";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
-const Pagination = () => {
+interface Props {
+  total?: any
+  onChange?: any
+  active?: any
+}
 
-  const { t } = useTranslation()
+const Pagination = ({ total, active, onChange }: Props) => {
+
+  const onClick = (page: any) => {
+    onChange(page)
+  }
 
   return (
     <>
       <ul className="pagination align-items-center justify-content-center">
-        <li className="page-item">
-          <Link className="page-link prev" href="#">
+        <li className="page-item" onClick={() => Number(active) === 1 ? onClick(1) : onClick(active - 1)}>
+          <p className="page-link prev">
             <i className="fas fa-angle-left"></i>
             {" "}
-          </Link>
+          </p>
         </li>
-        <li className="page-item">
-          <Link className="page-link" href="#">
-            1
-          </Link>
-        </li>
-        <li className="page-item">
-          <Link className="page-link next" href="#">
+        {
+          Array(Math.ceil(total / 12)).fill(1).map((el, index) => (
+            <li className={`page-item ${(index + 1) === Number(active) ? "active" : ""}`} onClick={() => onClick(index + 1)}>
+              <p className="page-link">
+                {index + 1}
+              </p>
+            </li>
+          ))
+        }
+        <li className="page-item" onClick={() => Number(active) === Math.ceil(total / 12) ? onClick(Math.ceil(total / 12)) : onClick(Number(active) + 1)}>
+          <p className="page-link next">
             <i className="fas fa-angle-right"></i>
-          </Link>
+          </p>
         </li>
       </ul>
     </>

@@ -6,7 +6,7 @@ import ShopListView from "./ShopListView";
 import Pagination from "@/utils/Pagination";
 import api from "@/utils/api";
 import useQueryParam from "@/utils/useQueryParams";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Preloader from "@/utils/Preloader";
 import { useTranslation } from "react-i18next";
 
@@ -28,17 +28,27 @@ const ShopArea = () => {
   const query = useQueryParam()
   const [data, setData] = useState<any[]>([])
   const { t } = useTranslation()
+  const [count, setCount] = useState<any>(0)
+  const [page, setPage] = useState<any>(query.getParams()?.page || 1)
+  const router = useRouter()
 
-  const getData = async () => {
-    const resp = await api.get(`common/products/?category__slug=${param?.slug || ''}`)
+  const getData = async (p: any) => {
+    const resp = await api.get(`common/products/?category__slug=${param?.slug || ''}&page=${p}`)
 
     setactiveTab(true)
+    setCount(resp.data.count)
     setData(resp.data.results);
   }
 
+  const handlePagination = (p: any) => {
+    router.push(`/shop?page=${p}`)
+    setPage(p)
+  }
+
+
   useEffect(() => {
-    getData()
-  }, [param?.slug])
+    getData(page)
+  }, [param?.slug, page])
 
 
   return (
@@ -62,7 +72,7 @@ const ShopArea = () => {
                         className="pagination-page"
                         aria-label="Page navigation example"
                       >
-                        <Pagination />
+                        <Pagination active={page} total={count} onChange={(p: any) => handlePagination(p)} />
                       </nav>
                     </div>
                   </div>

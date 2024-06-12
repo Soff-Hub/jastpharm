@@ -387,3 +387,7 @@
     background-color: rgba(199, 199, 199, 0.392);
     backdrop-filter: blur(4px);
 }
+
+body {
+    scroll-behavior: smooth;
+}

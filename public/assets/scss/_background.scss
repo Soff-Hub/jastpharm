@@ -23,3 +23,64 @@ body {
     background-image: url('../images/bg/bgimg-2.png');
     backdrop-filter: blur(7px);
 }
+
+
+.tutorial {
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.tutorial-inner {
+    display: flex;
+    overflow: hidden;
+    max-width: 1200px;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 80%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 80%, transparent);
+}
+
+.scroller {
+    display: flex;
+    gap: 20px;
+    animation: scroll 40s linear infinite;
+    animation-delay: calc(40s / -1);
+}
+
+.scroller:nth-child(2) {
+    animation: scroll2 40s linear infinite;
+    animation-delay: calc(40s / -2);
+}
+
+.scroller-item {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}

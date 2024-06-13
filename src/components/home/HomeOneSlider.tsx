@@ -20,7 +20,7 @@ export interface HomeCarouselItem {
 }
 
 const HomeOneSlider = () => {
-  const { isDesktop } = useResponsive();
+  const { isDesktop, isTablet } = useResponsive();
   const { t } = useTranslation();
 
   const [data, setData] = useState<HomeCarouselItem[]>([]);
@@ -66,9 +66,7 @@ const HomeOneSlider = () => {
                     <div
                       className="slider-content z-index1 position-absolute w-100"
                       style={
-                        isDesktop
-                          ? { transform: "translateX(-50%)", left: "50%" }
-                          : { transform: "translateX(0%)", left: "0" }
+                        { transform: "translateX(0%)", left: "0" }
                       }
                     >
                       <div className="container">

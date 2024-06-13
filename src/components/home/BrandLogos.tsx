@@ -46,7 +46,7 @@ const BrandLogos = () => {
             </div>
           </div>
           <div className="mlr--55">
-            <div className="row pt-25 pb-25">
+            {/* <div className="row pt-25 pb-25">
               {data.length && <Swiper
                 modules={[Scrollbar, A11y, Autoplay]}
                 spaceBetween={20}
@@ -102,10 +102,54 @@ const BrandLogos = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+      <section className="tutorial">
+        <div className="tutorial-inner">
+          <div className="scroller">
+            {[...data]?.map((el, j) => (
+              <SwiperSlide key={j} className=" col-md-2 d-flex align-items-center justify-content-center" style={{ width: '200px', objectFit: 'contain' }}>
+                <div key={j} className={`text-center  p-0`}>
+                  <div className="p-3">
+                    <a href={el.url} target="_blank" className="d-block">
+                      <Image
+                        className="d-inline-block "
+                        src={el.image}
+                        alt="brand-img"
+                        width={300}
+                        height={200}
+                        style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: '80px' }}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </div>
+          <div className="scroller">
+            {[...data]?.map((el, j) => (
+              <SwiperSlide key={j} className="brand-img-div col-md-4 d-flex align-items-center justify-content-center" style={{ width: '200px' }}>
+                <div key={j} className={`text-center  p-0`}>
+                  <div className="p-3">
+                    <a href={el.url} target="_blank" className="d-block">
+                      <Image
+                        className="d-inline-block "
+                        src={el.image}
+                        alt="brand-img"
+                        width={300}
+                        height={200}
+                        style={{ width: '100%', height: 'auto', objectFit: 'cover', maxHeight: '80px' }}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };

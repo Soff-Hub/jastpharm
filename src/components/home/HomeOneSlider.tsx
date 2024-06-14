@@ -23,7 +23,7 @@ const HomeOneSlider = () => {
   const { isDesktop, isTablet } = useResponsive();
   const { t } = useTranslation();
 
-  const [data, setData] = useState<HomeCarouselItem[]>([]);
+  const [data, setData] = useState<HomeCarouselItem[] | null>(null);
 
   const getData = async () => {
     const resp = await api.get(`common/banner/`);
@@ -36,7 +36,8 @@ const HomeOneSlider = () => {
 
   return (
     <>
-      {data.length ? (
+      {!data && <Preloader />}
+      {data?.length ? (
         <div
           className="slider-area over-hidden slider1"
           style={data.length ? {} : { height: "1000px" }}

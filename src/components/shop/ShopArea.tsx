@@ -26,7 +26,7 @@ const ShopArea = () => {
   ];
 
   const query = useQueryParam()
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<any[] | null>(null)
   const { t } = useTranslation()
   const [count, setCount] = useState<any>(0)
   const [page, setPage] = useState<any>(query.getParams()?.page || 1)
@@ -53,7 +53,7 @@ const ShopArea = () => {
 
   return (
     <>
-      {activeTab && data?.length > 0 ? <div className="product-area shop-product mt-20 mb-100">
+      {activeTab && data && data?.length > 0 ? <div className="product-area shop-product mt-20 mb-100">
         <div className="container">
           <div className="product-content single-product-tab-content"></div>
           <div className="product-wrapper mt-1">

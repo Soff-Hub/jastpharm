@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 const BlogMain = () => {
     const { t } = useTranslation()
 
-    const [data, setData] = useState<BlogType[]>([])
+    const [data, setData] = useState<BlogType[] | null>(null)
 
     const getData = async () => {
         const resp = await api.get(`common/blogs/`)
@@ -23,7 +23,7 @@ const BlogMain = () => {
         getData()
     }, [])
 
-    return data.length ? (
+    return data?.length ? (
         <>
             <Breadcrumb pageTitle={t('Blog')} />
             <div className="blog-area pt-20">

@@ -1060,6 +1060,7 @@
 	-moz-transition: all .3s ease-out;
 	-ms-transition: all .3s ease-out;
 	-o-transition: all .3s ease-out;
+	transform: rotateY(90deg);
 
 	.header-search-content {
 		ul {
@@ -1129,6 +1130,7 @@
 
 .side-mobile-menu.open-menubar {
 	right: 0;
+	transform: rotateY(0deg);
 }
 
 .icon-clear {
